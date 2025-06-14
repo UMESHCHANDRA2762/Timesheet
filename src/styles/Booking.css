@@ -1,0 +1,212 @@
+/* Base Body and Container Styles */
+body {
+  background-color: #f0f2f5;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.booking-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Changed to allow content to flow from the top */
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 2rem 1rem; /* Added more top padding */
+}
+
+/* --- NEW: Hero Section Styles --- */
+.booking-hero {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #6c757d;
+  max-width: 450px;
+}
+/* --- END NEW STYLES --- */
+
+/* Main Booking Card Styles */
+.booking-card {
+  border-radius: 1.25rem !important;
+  border: none !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.5s ease-in-out 0.2s; /* Added delay */
+  animation-fill-mode: backwards; /* Prevents flicker on load */
+  max-width: 500px;
+  width: 100%;
+}
+
+.booking-card .card-body {
+  /* Removed header for a cleaner look */
+  padding-top: 1.5rem !important;
+}
+
+/* Input & Form Styles */
+.route-connector {
+  position: absolute;
+  left: 9px;
+  top: 28px;
+  height: 45px;
+  width: 2px;
+  background-color: #e9ecef;
+  z-index: 1;
+}
+
+.form-control {
+  background-color: #f8f9fa !important;
+  border: 2px solid transparent !important;
+  border-radius: 0.75rem !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: none !important;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-control:focus {
+  background-color: #fff !important;
+  border-color: #0d6efd !important;
+}
+
+/* Search Results List */
+.results-list {
+  position: absolute;
+  width: 100%;
+  top: calc(100% + 8px);
+  z-index: 1000;
+  border-radius: 0.75rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  max-height: 280px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.results-list .list-group-item {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-bottom: 1px solid #f0f2f5;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.results-list .list-group-item:last-child {
+  border-bottom: none;
+}
+
+.results-list .list-group-item:hover {
+  background-color: #f0f2f5;
+}
+
+.results-list .info-item {
+  cursor: default;
+  color: #6c757d;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.results-list .info-item:hover {
+  background-color: #fff;
+}
+
+/* Ride Estimate Card Styles */
+.estimate-card {
+  background-color: #f8f9fa !important;
+  border-radius: 1rem !important;
+  border: none;
+  animation: slideUpIn 0.4s ease-out;
+}
+
+.book-ride-btn {
+  font-weight: 600;
+  padding: 0.85rem;
+  border-radius: 0.75rem;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.book-ride-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablet and smaller devices (<= 768px) */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .form-control {
+    padding: 0.7rem 0.9rem !important;
+    font-size: 0.95rem;
+  }
+  .book-ride-btn {
+    padding: 0.8rem;
+  }
+}
+
+/* Mobile devices (<= 576px) */
+@media (max-width: 576px) {
+  .booking-container {
+    padding: 1.5rem 1rem;
+  }
+  .booking-hero {
+    margin-bottom: 2rem;
+  }
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  .booking-card {
+    border-radius: 1rem !important;
+    box-shadow: none;
+    border: 1px solid #e9ecef !important;
+  }
+  .booking-card .card-body {
+    padding: 1rem !important;
+  }
+  .h5.fw-bold {
+    font-size: 1rem;
+  }
+  .h2.fw-bold {
+    font-size: 1.5rem;
+  }
+}
