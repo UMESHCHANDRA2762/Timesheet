@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* --- Base Styling --- */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f0f2f5; /* Use a consistent light grey background */
+}
+
+/* --- NEW: Page container to center the content block --- */
+.home-page-container {
+  max-width: 600px; /* A comfortable width for a feed */
+  margin: 0 auto; /* Horizontally centers the container */
+  padding: 2rem 1rem; /* Provides vertical and horizontal space */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center header text */
+}
+
+/* --- Page Header --- */
+.home-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.home-title {
+  font-weight: 700;
+  font-size: 2.25rem;
+  color: #1d2d44;
+}
+
+.home-subtitle {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+/* --- Rides List & Links --- */
+.rides-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Space between ride cards */
+  width: 100%;
+}
+
+.ride-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- NEW: Modern RideCard Styling --- */
+.ride-card {
+  background-color: #ffffff;
+  border-radius: 1rem; /* Softer, larger radius */
+  border: 1px solid #e9ecef;
+  padding: 1.25rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.ride-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(41, 79, 114, 0.08);
+}
+
+/* --- Card Content Styling --- */
+.route-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1d2d44;
+}
+
+.route-arrow {
+  color: #007bff; /* Make the arrow stand out */
+}
+
+.ride-meta {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* --- Price Display in the Card --- */
+.price-display {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1d2d44;
+}
